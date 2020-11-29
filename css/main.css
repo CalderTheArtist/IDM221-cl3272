@@ -38,12 +38,11 @@ body {
     background-attachment: scroll;
     background-clip: padding-box;
     background-color: #221a21;
-    /* background-blend-mode: lighten; */
     background-image: url(../img/bg.png);
     background-position-x: center;
     display: inline-block;
     margin: auto;
-    padding: 15% 5%;
+    padding: 4rem 1rem;
 }
 
 /**
@@ -518,29 +517,35 @@ template {
 /* ============================Custom Additions============================== */
 /*============================================================================*/
 
-a:link {
-    color: rgb(255, 170, 244);
+a:link,
+a:visited {
+    background-color: #714b75;
+    border-radius: 1rem;
+    color: rgb(255, 240, 253);
+    padding: 0.5rem 0.75rem;
     text-decoration: none;
+    text-shadow: 1.5px 1.5px 1.5px rgba(59, 51, 59, 0.75);
 }
 
-a:visited {
-    color: rgb(203, 113, 255);
+/* a:visited {
     text-decoration: none;
-}
+} */
 
 a:hover,
 a:focus,
 a:active {
     background-color: #eb36ff;
-    border-radius: 1rem;
-    color: rgb(255, 240, 253);
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
+    text-shadow: 2.5px 2.5px 2.5px rgba(59, 51, 59, 0.75);
+    /* -webkit-animation: slide-tr 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-tr 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
 
 h1 {
     background-color: rgba(59, 51, 59, 0.75);
     border-radius: 1rem;
     padding: 1rem;
+    text-align: center;
     text-shadow: 3px 3px 3px rgba(25, 25, 25, 75%);
 }
 
@@ -548,8 +553,9 @@ p {
     background-color: rgba(59, 51, 59, 0.75);
     border-radius: 1rem;
     padding: 1rem;
+    text-align: center;
     text-shadow: 1.5px 1.5px 1.5px rgba(25, 25, 25, 75%);
-    }
+}
 
 #footer {
     background-color: rgb(36, 15, 36);
@@ -561,25 +567,51 @@ p {
     width: 100%;
 }
 
-#header {
+/* #header {
     background-color: rgb(36, 15, 36);
     display: inline-block;
     font-weight: bold;
     height: auto;
     left: 0px;
-    /* padding: 0 1rem; */
+    padding: 0 1rem;
     position: fixed;
     text-align: center;
     top: 0px;
     width: 100%;
-    /* vertical-align: middle; */
+    vertical-align: middle;
+} */
+
+.flex-container {
+    background-color: rgb(36, 15, 36);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    left: 0px;
+    padding: 1.5rem 0;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
-.headerName {
+#flex-box {
+    display: inline-block;
+    font-weight: bold;
+    margin: auto;
+    width: fit-content;
+}
+
+#my-work {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* .headerName {
     display: inline-block;
     float: left;
     height: auto;
-    padding: 0.75rem 1rem;
+    padding: 1.5rem 1rem;
     vertical-align: middle;
 }
 
@@ -597,4 +629,30 @@ p {
     padding: 0.25rem 0.5rem;
     margin: auto;
     width: fit-content;
-}
+} */
+
+/* ============================================================================ */
+/* ===========================Animation Keyframes============================== */
+/* ============================================================================ */
+
+/* @-webkit-keyframes slide-tr {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(-1rem) translateX(1rem);
+              transform: translateY(-1rem) translateX(1rem);
+    }
+  }
+
+@keyframes slide-tr {
+    0% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+    100% {
+      -webkit-transform: translateY(-1rem) translateX(1rem);
+              transform: translateY(-1rem) translateX(1rem);
+    }
+  } */
