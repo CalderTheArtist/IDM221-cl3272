@@ -542,42 +542,46 @@ a:visited {
 
 .animate-in>h1,
 .animate-in>p,
-.animate-in>#my-work,
+.animate-in>.my-work,
 .animate-in>#aboutMe-ul {
     -webkit-animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-
-#flex-box {
-    display: inline-block;
-    font-weight: bold;
-    margin: 0rem 0.25rem;
-    padding: 1rem 0.5rem;
-}
-
-#my-work {
+.my-work {
+    background-color: #eb36ff;
+    display: flex;
     font-size: 2rem;
     font-weight: bold;
-    text-align: center;
+    justify-content: center;
 }
 
 #flex-box,
-#my-work {
-    background-color: #714b75;
+.my-work {
     border-radius: 1rem;
     color: rgb(255, 240, 253);
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     text-shadow: 1.5px 1.5px 1.5px rgba(59, 51, 59, 0.75);
-    transition: transform 0.7s;
 }
 
-#flex-box:hover,
-#my-work:hover {
+#flex-box {
+    background-color: #714b75;
+    font-weight: bold;
+    margin: 0rem 0.25rem;
+    text-align: center;
+    transition: width 0.7s;
+    width: 5rem;
+}
+
+#flex-box:hover {
     background-color: #eb36ff;
     padding: 0.5rem 0.75rem;
     text-shadow: 2.5px 2.5px 2.5px rgba(59, 51, 59, 0.75);
-    transform: translateY(-0.25rem) translateX(0.25rem);
+    width: 15%;
+}
+
+.my-work:hover {
+    height: 55%;
 }
 
 h1 {
