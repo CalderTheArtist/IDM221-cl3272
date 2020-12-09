@@ -581,6 +581,7 @@ p,
 
 #flex-box {
     background-color: #714b75;
+    font-family: "ff-scala-sans-pro";
     font-weight: bold;
     margin: 0rem 0.25rem;
     text-align: center;
@@ -639,10 +640,12 @@ h1:hover {
 .video-container {
     display: flexbox;
     width: 100%;
+    -webkit-animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 #video,
-.video-container>#youtube-video {
+#youtube-video {
     background: rgba(59, 51, 59, 0.5);
     border-radius: 1rem;
     box-sizing: border-box;
@@ -652,11 +655,15 @@ h1:hover {
     width: 100%;
 }
 
-.video-container>#youtube-video {
+#youtube-video {
     /* display: flexbox; */
     height: 27.5rem;
     /* width: fit-content; */
     z-index: 2;
+}
+
+.video-container>p>a:link {
+    text-decoration: underline;
 }
 
 /* =====================FOOTER==================== */
