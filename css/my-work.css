@@ -657,7 +657,7 @@ h1:hover {
 
 #youtube-video {
     /* display: flexbox; */
-    height: 27.5rem;
+    /* height: 27.5rem; */
     /* width: fit-content; */
     z-index: 2;
 }
