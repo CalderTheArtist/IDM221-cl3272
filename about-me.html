@@ -5,10 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me</title>
+    <script src="js/init.js"></script>
     <link href="css/about-me.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Scada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mlq1ryr.css">
 </head>
 
-<body>
+<body onload="initFunction()">
+    <div id="bg""></div>
     <div class="header-flex-container">
         <div id="flex-box">
             <a href="index.html">HOME</a>
@@ -28,7 +33,7 @@
         <div id="profile">
             <img src="img/profile.jpg" alt="Profile picture of Calder">
         </div>
-        <h1>Nice to meet you, I'm <b>Calder</b>, I do a lot of different things and try to make as much weird stuff as I
+        <h1>Nice to meet you, I'm <b>Calder</b> [<i>he/him</i>], I do a lot of different things and try to make as much weird stuff as I
             possibly can.</h1>
         <p>By a lot of different things I mean stuff like:</p>
         <ul id="aboutMe-ul">
@@ -50,12 +55,16 @@
         <p>You can also reach me through any of my socials linked below!</p>
     </div>
 
-    <div id="footer">
+    <footer>
+    <!-- <div id="footer"> -->
         <div class="logo">
             <img src="ico/logo.svg" alt="Logo">
         </div>
         <ul>
-            <li id="footer-list">Calder Lloyd</li>
+            <li id="footer-list">© Calder Lloyd [
+                <span id="date">2020</span>
+                ]
+            </li>
             <li id="footer-list">
                 <a id="email-link" href="mailto:caldertheartist@gmail.com">caldertheartist@gmail.com</a>
             </li>
@@ -82,7 +91,8 @@
                 </li>
             </ul>
         </ul>
-    </div>
+    </footer>
+    <!-- </div> -->
 </body>
 
 </html>

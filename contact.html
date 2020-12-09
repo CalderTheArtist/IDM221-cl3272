@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get in Touch</title>
     <link href="css/contact.css" rel="stylesheet" />
+    <script src="js/init.js"></script>
+    <script src="https://kit.fontawesome.com/fc2dc4a7e5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Scada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mlq1ryr.css">
 </head>
 
-<body>
+<body onload="initFunction()">
+    <div id="bg""></div>
     <div class="header-flex-container">
         <div id="flex-box">
             <a href="index.html">HOME</a>
@@ -24,14 +30,43 @@
         </div>
     </div>
 
-    <div id="footer">
+    <div class="animate-in">
+        <h1>Want to work with me?</h1>
+        <p>Dope! Just let me know what you're interested in!</p>
+        <div id="contact-link">
+            <a href="mailto:caldertheartist@gmail.com">Click here to send me an email!</a>
+        </div>
+    </div>
+    <!-- Attempted to use a form but the method to get it to actually output
+        something I could use was beyond the scope of what I can do, defaulting
+        to a mailto: link -->
+
+    <!-- <p>Please put your name, pronouns, email, and anything you want me to know in the fields below, and I'll get back to you as quickly as I can!</p>
+
+    <form>
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="pronouns">Pronouns</label><br>
+        <input type="text" id="pronouns" name="pronouns"><br>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="other-details">Other details</label><br>
+        <textarea name="other-details" id="other-details"></textarea>
+        <input type="submit" value="Submit" id="submit">
+    </form> -->
+
+    <footer>
+    <!-- <div id="footer"> -->
         <div class="logo">
             <img src="ico/logo.svg" alt="Logo">
         </div>
         <ul>
-            <li id="footer-list">Calder Lloyd</li>
+            <li id="footer-list">© Calder Lloyd [
+                <span id="date">2020</span>
+                ]
+            </li>
             <li id="footer-list">
-                <a id="email-link" href="mailto:caldertheartist@gmail.com">caldertheartist@gmail.com</a> 
+                <a id="email-link" href="mailto:caldertheartist@gmail.com">caldertheartist@gmail.com</a>
             </li>
             <ul class="social-list">
                 <li>
@@ -56,7 +91,8 @@
                 </li>
             </ul>
         </ul>
-    </div>
+    </footer>
+    <!-- </div> -->
 </body>
 
 </html>

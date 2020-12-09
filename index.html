@@ -5,10 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calder, the Artist</title>
+    <script src="js/init.js"></script>
     <link href="css/index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Scada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mlq1ryr.css">
 </head>
 
-<body>
+<body onload="initFunction()">
+    <div id="bg""></div>
     <div class="header-flex-container">
         <div id="flex-box">
             <a href="index.html">HOME</a>
@@ -26,21 +31,24 @@
 
     <div class="animate-in">
         <h1>Professional video producer, editor, and motion graphic designer.</h1>
-        <p>Hey there, my name's <b>Calder</b>, I make things for myself and for money.</p>
-        <p>Curious about the things I make?</p>
+        <p>Hey there, my name's <b>Calder</b>, I make lots of different things. Curious about the things I make?</p>
         <div class="my-work">
             <a href="my-work.html">Check out my work!</a>
         </div>
     </div>
 
-    <div id="footer">
+    <footer>
+    <!-- <div id="footer"> -->
         <div class="logo">
             <img src="ico/logo.svg" alt="Logo">
         </div>
         <ul>
-            <li id="footer-list">Calder Lloyd</li>
+            <li id="footer-list">© Calder Lloyd [
+                <span id="date">2020</span>
+                ]
+            </li>
             <li id="footer-list">
-                <a id="email-link" href="mailto:caldertheartist@gmail.com">caldertheartist@gmail.com</a> 
+                <a id="email-link" href="mailto:caldertheartist@gmail.com">caldertheartist@gmail.com</a>
             </li>
             <ul class="social-list">
                 <li>
@@ -65,7 +73,8 @@
                 </li>
             </ul>
         </ul>
-    </div>
+    </footer>
+    <!-- </div> -->
 </body>
 
 </html>

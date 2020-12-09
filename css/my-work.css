@@ -11,7 +11,7 @@
    ========================================================================== */
 
    html {
-    font-family: sans-serif;
+    font-family: "ff-scala-sans-pro", "Scada", sans-serif;
     /* 1 */
     line-height: 1.15;
     /* 2 */
@@ -34,13 +34,9 @@ body {
 } */
 
 body {
-    color: rgb(255, 240, 253);
-    background-attachment: scroll;
-    background-clip: padding-box;
     background-color: #221a21;
-    background-image: url(../img/bg.png);
-    background-position-x: center;
-    display: inline-block;
+    color: #fff0fd;
+    /* display: inline-block; */
     margin: auto;
     padding: 4rem 1rem;
 }
@@ -517,6 +513,28 @@ template {
 /* ============================Custom Additions============================== */
 /*============================================================================*/
 
+
+/* =====================BACKGROUND==================== */
+
+#bg {
+    background-image: url(../img/bg-pattern.png);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: 50%;
+    height: 100%;
+    margin: -1rem;
+    opacity: 0;
+    padding: -1rem;
+    position: fixed;
+    width: 100%;
+    z-index: -3;
+    -webkit-animation: bg-anim 30s linear;
+    animation: bg-anim 30s linear;
+    animation-iteration-count: infinite;
+}
+
+/* =====================HEADER AND SETUP==================== */
+
 a:link,
 a:visited {
     color: rgb(255, 240, 253);
@@ -538,21 +556,18 @@ a:visited {
     z-index: 5;
 }
 
-/* Used timing from animista.net for a smooth curve */
+.animate-in {
+    z-index: 1;
+}
+
+/* Used timing and animations from animista.net for a smooth curve */
 
 .animate-in>h1,
-.animate-in>p,
-.animate-in>.my-work,
-.animate-in>#aboutMe-ul {
+p,
+.animate-in>#contact-link,
+.animate-in>.video-container>#video {
     -webkit-animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-}
-.my-work {
-    background-color: #eb36ff;
-    display: flex;
-    font-size: 2rem;
-    font-weight: bold;
-    justify-content: center;
 }
 
 #flex-box,
@@ -580,38 +595,73 @@ a:visited {
     width: 15%;
 }
 
-.my-work:hover {
-    height: 55%;
-}
-
-h1 {
-    background-color: rgba(59, 51, 59, 0.75);
+h1,
+p {
+    transition: background 0.7s;
     border-radius: 1rem;
     padding: 1rem;
     text-align: center;
     text-shadow: 3px 3px 3px rgba(25, 25, 25, 75%);
-    margin: 0.25rem;
+    margin: 0.25rem 0rem;
+}
+
+h1 {
+    background: rgba(58, 31, 58, 0.75);
+    font-family: "ff-scala-sans-pro";
 }
 
 p {
-    background-color: rgba(59, 51, 59, 0.75);
+    background: rgba(59, 51, 59, 0.75);
+    font-family: "ff-scala-sans-pro-condensed";
 }
 
-#aboutMe-ul {
-    background-color: rgba(58, 31, 58, 0.75);
-}
-
-p,
-#aboutMe-ul {
+/* #contact-link {
+    background-color: #EB36FFbf;
     border-radius: 1rem;
-    list-style: none;
-    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
     text-align: center;
-    text-shadow: 1.5px 1.5px 1.5px rgba(25, 25, 25, 75%);
-    margin: 0.25rem 0;
+    transition: background 0.7s;
+    width: 100%;
+} */
+
+p:hover {
+    background: #3b333b
 }
 
-#footer {
+h1:hover {
+    background: rgb(58, 31, 58);
+}
+
+/* =====================CONTENT==================== */
+
+.video-container {
+    display: flexbox;
+    width: 100%;
+}
+
+#video,
+.video-container>#youtube-video {
+    background: rgba(59, 51, 59, 0.5);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flexbox;
+    /* margin: 0.25rem 0; */
+    padding: 1rem;
+    width: 100%;
+}
+
+.video-container>#youtube-video {
+    /* display: flexbox; */
+    height: 27.5rem;
+    /* width: fit-content; */
+    z-index: 2;
+}
+
+/* =====================FOOTER==================== */
+
+footer {
     background-color: rgb(36, 15, 36);
     bottom: 0px;
     display: flex;
@@ -620,12 +670,13 @@ p,
     left: 0px;
     position: fixed;
     width: 100%;
-    z-index: 4;
+    z-index: 5;
 }
 
-#footer>ul {
+footer>ul {
     display: flex;
     flex-direction: column;
+    height: 1.5rem;
     padding-left: 1rem;
     width: 100%;
 }
@@ -648,10 +699,12 @@ p,
 }
 
 .social-list {
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     float: right;
+    height: 2rem;
     position: fixed;
     right: 1rem;
 }
@@ -670,7 +723,12 @@ p,
 }
 
 #social {
-    height: 1rem;
+    height: 1.25rem;
+    transition: height 0.7s;
+}
+
+#social:hover {
+    height: 1.5rem;
 }
 
 
@@ -704,5 +762,25 @@ p,
         -webkit-transform: translateY(0px) translateZ(160px) rotateX(360deg) scale(1);
         transform: translateY(0px) translateZ(160px) rotateX(360deg) scale(1);
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes bg-anim {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+@keyframes bg-anim {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
     }
 }

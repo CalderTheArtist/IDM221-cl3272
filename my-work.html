@@ -5,10 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Work</title>
+    <script src="js/init.js"></script>
     <link href="css/my-work.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Scada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/mlq1ryr.css">
 </head>
 
-<body>
+<body onload="initFunction()">
+    <div id="bg""></div>
     <div class="header-flex-container">
         <div id="flex-box">
             <a href="index.html">HOME</a>
@@ -24,12 +29,42 @@
         </div>
     </div>
 
-    <div id="footer">
+    <div class="animate-in">
+        <h1>Stream assets:</h1>
+        <div class="video-container">
+            <p>Alert that wraps around the webcam and drops below:</p>
+            <video id="video" controls loop src="vid/webcam-alert.mp4" type="video/mp4"></video>
+            <p>Alert that pops up from the bottom, used when there's no boxed webcam:</p>
+            <video id="video" controls loop src="vid/lower-3rd-alert.webm" type="video/webm"></video>
+            <p>Underlay for a chat box, designed to be placed above the webcam:</p>
+            <video id="video" controls loop src="vid/chat-underlay.webm" type="video/webm"></video>
+            <p>Intermission screen, to be overlaid with information and another chat underlay:</p>
+            <video id="video" controls loop src="vid/intermission-screen.webm" type="video/webm"></video>
+            <p>Examples of what could be overlaid on top of the intermission screen:</p>
+            <video id="video" controls loop src="vid/loading-stream.webm" type="video/webm"></video>
+            <video id="video" controls loop src="vid/unloading-stream.webm" type="video/webm"></video>
+            <video id="video" controls loop src="vid/be-right-back.webm" type="video/webm"></video>
+            <p>A drop in animation for social media handles:</p>
+            <video id="video" controls loop src="vid/socials-drop-in.webm" type="video/webm"></video>
+            <p>Stinger transition to use between scenes in OBS:</p>
+            <video id="video" controls loop src="vid/transition.webm" type="video/webm"></video>
+        </div>
+        <h1>Video production:</h1>
+        <div class="video-container">
+            <iframe id="youtube-video" src="https://www.youtube.com/embed/WhVklgyHwEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+    <!-- <div id="footer"> -->
         <div class="logo">
             <img src="ico/logo.svg" alt="Logo">
         </div>
         <ul>
-            <li id="footer-list">Calder Lloyd</li>
+            <li id="footer-list">© Calder Lloyd [
+                <span id="date">2020</span>
+                ]
+            </li>
             <li id="footer-list">
                 <a id="email-link" href="mailto:caldertheartist@gmail.com">caldertheartist@gmail.com</a> 
             </li>
@@ -56,7 +91,8 @@
                 </li>
             </ul>
         </ul>
-    </div>
+    </footer>
+    <!-- </div> -->
 </body>
 
 </html>

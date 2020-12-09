@@ -11,7 +11,7 @@
    ========================================================================== */
 
    html {
-    font-family: sans-serif;
+    font-family: "ff-scala-sans-pro", "Scada", sans-serif;
     /* 1 */
     line-height: 1.15;
     /* 2 */
@@ -34,13 +34,9 @@ body {
 } */
 
 body {
-    color: rgb(255, 240, 253);
-    background-attachment: scroll;
-    background-clip: padding-box;
     background-color: #221a21;
-    background-image: url(../img/bg.png);
-    background-position-x: center;
-    display: inline-block;
+    color: #fff0fd;
+    /* display: inline-block; */
     margin: auto;
     padding: 4rem 1rem;
 }
@@ -517,6 +513,26 @@ template {
 /* ============================Custom Additions============================== */
 /*============================================================================*/
 
+
+/* =====================BACKGROUND==================== */
+
+#bg {
+    background-image: url(../img/bg-pattern.png);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: 50%;
+    height: 100%;
+    margin: -1rem;
+    opacity: 0;
+    padding: -1rem;
+    position: fixed;
+    width: 100%;
+    z-index: -3;
+    -webkit-animation: bg-anim 30s linear;
+    animation: bg-anim 30s linear;
+    animation-iteration-count: infinite;
+}
+
 a:link,
 a:visited {
     color: rgb(255, 240, 253);
@@ -538,21 +554,17 @@ a:visited {
     z-index: 5;
 }
 
-/* Used timing from animista.net for a smooth curve */
+.animate-in {
+    z-index: 1;
+}
+
+/* Used timing and animations from animista.net for a smooth curve */
 
 .animate-in>h1,
 .animate-in>p,
-.animate-in>.my-work,
-.animate-in>#aboutMe-ul {
+.animate-in>#contact-link {
     -webkit-animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation: flip-horizontal-fwd 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-}
-.my-work {
-    background-color: #eb36ff;
-    display: flex;
-    font-size: 2rem;
-    font-weight: bold;
-    justify-content: center;
 }
 
 #flex-box,
@@ -580,26 +592,117 @@ a:visited {
     width: 15%;
 }
 
-.my-work:hover {
-    height: 55%;
+h1,
+p {
+    background: rgba(59, 51, 59, 0.5);
+    transition: background 0.7s;
 }
 
 h1 {
-    background-color: rgba(59, 51, 59, 0.75);
+    background-color: rgba(58, 31, 58, 0.75);
     border-radius: 1rem;
+    font-family: ff-scala-sans-pro;
     padding: 1rem;
     text-align: center;
     text-shadow: 3px 3px 3px rgba(25, 25, 25, 75%);
-    margin: 0.25rem;
+    margin: 0.25rem 0;
 }
 
 p {
-    background-color: rgba(59, 51, 59, 0.75);
+    font-family: "ff-scala-sans-pro-condensed";
 }
 
-#aboutMe-ul {
-    background-color: rgba(58, 31, 58, 0.75);
+#contact-link {
+    background-color: #EB36FFbf;
+    border-radius: 1rem;
+    display: flex;
+    font-family: "ff-scala-sans-pro";
+    font-weight: 700;
+    justify-content: center;
+    padding: 1rem 0;
+    text-align: center;
+    transition: background 0.7s;
+    width: 100%;
 }
+
+p:hover {
+    background: rgb(59, 51, 59)
+}
+
+h1:hover {
+    background: rgb(58, 31, 58);
+}
+
+/* Removing the css for the form I couldn't get to work */
+
+/* form {
+    background: rgba(59, 51, 59, 0.5);
+    border-radius: 1rem;
+    color: rgb(255, 240, 253);
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(25, 25, 25, 75%);
+}
+
+input[type=text] {
+    color: rgb(255, 240, 253);
+    text-shadow: 1px 1px 1px rgba(25, 25, 25, 75%);
+    transition: background 0.7s;
+}
+
+input[type=text]:focus,
+#other-details:focus {
+    background: rgba(58, 31, 58, 0.75);
+    outline: none;
+} */
+
+/* form>#name,
+form>#pronouns,
+form>#email,
+form>#other-details,
+select:-webkit-autofill {
+    display: flex;
+    background: rgba(58, 31, 58, 0.25);
+    border-top: 2px solid white;
+    border-bottom: 2px solid #eb36ff;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 0.5rem auto;
+    width: 90%;
+    padding: 0.5rem;
+    transition: background 0.7s;
+    -webkit-text-fill-color: rgb(255, 240, 253);
+}
+
+form>#name:focus,
+form>#pronouns:focus,
+form>#email:focus,
+form>#other-detai:focus,
+select:-webkit-autofill:focus {
+    background: rgba(58, 31, 58, 0.75);
+}
+
+#other-details {
+    color: rgb(255, 240, 253);
+    display: flex;
+    height: 20rem;
+    resize: none;
+    transition: background 0.7s;
+}
+
+#other-details:focus {
+    background: rgba(58, 31, 58, 0.75);
+}
+
+#submit {
+    background: #eb36ff;
+    border-radius: 1rem;
+    color: rgb(255, 240, 253);
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+} */
 
 p,
 #aboutMe-ul {
@@ -611,7 +714,7 @@ p,
     margin: 0.25rem 0;
 }
 
-#footer {
+footer {
     background-color: rgb(36, 15, 36);
     bottom: 0px;
     display: flex;
@@ -623,9 +726,10 @@ p,
     z-index: 5;
 }
 
-#footer>ul {
+footer>ul {
     display: flex;
     flex-direction: column;
+    height: 1.5rem;
     padding-left: 1rem;
     width: 100%;
 }
@@ -648,10 +752,12 @@ p,
 }
 
 .social-list {
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     float: right;
+    height: 2rem;
     position: fixed;
     right: 1rem;
 }
@@ -670,7 +776,12 @@ p,
 }
 
 #social {
-    height: 1rem;
+    height: 1.25rem;
+    transition: height 0.7s;
+}
+
+#social:hover {
+    height: 1.5rem;
 }
 
 
@@ -704,5 +815,25 @@ p,
         -webkit-transform: translateY(0px) translateZ(160px) rotateX(360deg) scale(1);
         transform: translateY(0px) translateZ(160px) rotateX(360deg) scale(1);
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes bg-anim {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+@keyframes bg-anim {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
     }
 }
